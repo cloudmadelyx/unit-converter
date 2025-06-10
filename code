@@ -1,0 +1,72 @@
+print("Velkommen til enhet konverterer!")
+print("Deutsch, Norsk, English")
+language = input("Velg språk / Select a language / Wählen Sie eine Sprache: ").strip().lower()
+
+if language == "norsk":
+    print("Du har valgt Norsk.")
+    print("Skal du gå fra Celsius til Fahrenheit? (ja/nei)")
+    svar = input().strip().lower()
+    if svar == "ja":
+        print("Skriv hvor mange grader Celsius:")
+        grader = float(input())
+        resultat = grader * 1.8 + 32
+        print(f"{grader}°C er {resultat}°F")
+    elif svar == "nei":
+        print("Skal du gå fra Fahrenheit til Celsius? (ja/nei)")
+        svar2 = input().strip().lower()
+        if svar2 == "ja":
+            print("Skriv hvor mange grader Fahrenheit:")
+            grader = float(input())
+            resultat = (grader - 32) / 1.8
+            print(f"{grader}°F er {resultat}°C")
+        else:
+            print("Ingen konvertering valgt.")
+    else:
+        print("Ugyldig svar.")
+
+elif language == "english":
+    print("You have selected English.")
+    print("Do you want to convert from Celsius to Fahrenheit? (yes/no)")
+    answer = input().strip().lower()
+    if answer == "yes":
+        print("Please enter the temperature in Celsius:")
+        degrees = float(input())
+        result = degrees * 1.8 + 32
+        print(f"{degrees}°C is {result}°F")
+    elif answer == "no":
+        print("Do you want to convert from Fahrenheit to Celsius? (yes/no)")
+        answer2 = input().strip().lower()
+        if answer2 == "yes":
+            print("Please enter the temperature in Fahrenheit:")
+            degrees = float(input())
+            result = (degrees - 32) / 1.8
+            print(f"{degrees}°F is {result}°C")
+        else:
+            print("No conversion selected.")
+    else:
+        print("Invalid response.")
+
+elif language == "deutsch":
+    print("Du hast Deutsch gewählt.")
+    print("Möchten Sie von Celsius nach Fahrenheit konvertieren? (ja/nein)")
+    antwort = input().strip().lower()
+    if antwort == "ja":
+        print("Bitte geben Sie die Temperatur in Celsius ein:")
+        grad = float(input())
+        ergebnis = grad * 1.8 + 32
+        print(f"{grad}°C sind {ergebnis}°F")
+    elif antwort == "nein":
+        print("Möchten Sie von Fahrenheit nach Celsius konvertieren? (ja/nein)")
+        antwort2 = input().strip().lower()
+        if antwort2 == "ja":
+            print("Bitte geben Sie die Temperatur in Fahrenheit ein:")
+            grad = float(input())
+            ergebnis = (grad - 32) / 1.8
+            print(f"{grad}°F sind {ergebnis}°C")
+        else:
+            print("Keine Konvertierung ausgewählt.")
+    else:
+        print("Ungültige Antwort.")
+
+else:
+    print("Språk ikke gjenkjent / Language not recognized / Sprache nicht erkannt.")
