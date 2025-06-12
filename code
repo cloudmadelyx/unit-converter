@@ -4,69 +4,146 @@ language = input("Velg språk / Select a language / Wählen Sie eine Sprache: ")
 
 if language == "norsk":
     print("Du har valgt Norsk.")
-    print("Skal du gå fra Celsius til Fahrenheit? (ja/nei)")
-    svar = input().strip().lower()
-    if svar == "ja":
-        print("Skriv hvor mange grader Celsius:")
-        grader = float(input())
-        resultat = grader * 1.8 + 32
-        print(f"{grader}°C er {resultat}°F")
-    elif svar == "nei":
-        print("Skal du gå fra Fahrenheit til Celsius? (ja/nei)")
-        svar2 = input().strip().lower()
-        if svar2 == "ja":
-            print("Skriv hvor mange grader Fahrenheit:")
+    print("Hva vil du konvertere? (temperatur/vekt)")
+    kategori = input().strip().lower()
+    if kategori == "temperatur":
+        print("Skal du gå fra Celsius til Fahrenheit? (ja/nei)")
+        print("Skal du gå fra Celsius til Fahrenheit? (ja/nei)")
+        svar = input().strip().lower()
+        if svar == "ja":
+            print("Skriv hvor mange grader Celsius:")
             grader = float(input())
-            resultat = (grader - 32) / 1.8
-            print(f"{grader}°F er {resultat}°C")
+            resultat = grader * 1.8 + 32
+            print(f"{grader}°C er {resultat}°F")
+        elif svar == "nei":
+            print("Skal du gå fra Fahrenheit til Celsius? (ja/nei)")
+            svar2 = input().strip().lower()
+            if svar2 == "ja":
+                print("Skriv hvor mange grader Fahrenheit:")
+                grader = float(input())
+                resultat = (grader - 32) / 1.8
+                print(f"{grader}°F er {resultat}°C")
+            else:
+                print("Ingen konvertering valgt.")
         else:
-            print("Ingen konvertering valgt.")
+            print("Ugyldig svar.")
+    elif kategori == "vekt":
+        print("Skal du konvertere fra gram til ounces? (ja/nei)")
+        svar = input().strip().lower()
+        if svar == "ja":
+            print("Skriv hvor mange gram:")
+            gram = float(input())
+            ounces = gram * 0.03527396
+            print(f"{gram} gram er {ounces} ounces")
+        elif svar == "nei":
+            print("Skal du konvertere fra ounces til gram? (ja/nei)")
+            svar2 = input().strip().lower()
+            if svar2 == "ja":
+                print("Skriv hvor mange ounces:")
+                ounces = float(input())
+                gram = ounces / 0.03527396
+                print(f"{ounces} ounces er {gram} gram")
+                print("Tusen takk for at du brukte enhet konverterer!")
+            else:
+                print("Ingen konvertering valgt.")
+        else:
+            print("Ugyldig svar.")
     else:
-        print("Ugyldig svar.")
+        print("Ugyldig kategori valgt.")  
 
 elif language == "english":
     print("You have selected English.")
-    print("Do you want to convert from Celsius to Fahrenheit? (yes/no)")
-    answer = input().strip().lower()
-    if answer == "yes":
-        print("Please enter the temperature in Celsius:")
-        degrees = float(input())
-        result = degrees * 1.8 + 32
-        print(f"{degrees}°C is {result}°F")
-    elif answer == "no":
-        print("Do you want to convert from Fahrenheit to Celsius? (yes/no)")
-        answer2 = input().strip().lower()
-        if answer2 == "yes":
-            print("Please enter the temperature in Fahrenheit:")
+    print("What do you want to convert? (temperature/weight)")
+    category = input().strip().lower()
+    if category == "temperature":
+        print("Do you want to convert from Celsius to Fahrenheit? (yes/no)")
+        answer = input().strip().lower()
+        if answer == "yes":
+            print("Please enter the temperature in Celsius:")
             degrees = float(input())
-            result = (degrees - 32) / 1.8
-            print(f"{degrees}°F is {result}°C")
+            result = degrees * 1.8 + 32
+            print(f"{degrees}°C is {result}°F")
+        elif answer == "no":
+            print("Do you want to convert from Fahrenheit to Celsius? (yes/no)")
+            answer2 = input().strip().lower()
+            if answer2 == "yes":
+                print("Please enter the temperature in Fahrenheit:")
+                degrees = float(input())
+                result = (degrees - 32) / 1.8
+                print(f"{degrees}°F is {result}°C")
+            else:
+                print("No conversion selected.")
         else:
-            print("No conversion selected.")
+            print("Invalid response.")
+    elif category == "weight":
+        print("Do you want to convert from grams to ounces? (yes/no)")
+        answer = input().strip().lower()
+        if answer == "yes":
+            print("Please enter the weight in grams:")
+            grams = float(input())
+            ounces = grams * 0.03527396
+            print(f"{grams} grams is {ounces} ounces")
+        elif answer == "no":
+            print("Do you want to convert from ounces to grams? (yes/no)")
+            answer2 = input().strip().lower()
+            if answer2 == "yes":
+                print("Please enter the weight in ounces:")
+                ounces = float(input())
+                grams = ounces / 0.03527396
+                print(f"{ounces} ounces is {grams} grams")
+            else:
+                print("No conversion selected.")
+        else:
+            print("Invalid response.")
     else:
-        print("Invalid response.")
+        print("Invalid category selected.")
 
 elif language == "deutsch":
     print("Du hast Deutsch gewählt.")
-    print("Möchten Sie von Celsius nach Fahrenheit konvertieren? (ja/nein)")
-    antwort = input().strip().lower()
-    if antwort == "ja":
-        print("Bitte geben Sie die Temperatur in Celsius ein:")
-        grad = float(input())
-        ergebnis = grad * 1.8 + 32
-        print(f"{grad}°C sind {ergebnis}°F")
-    elif antwort == "nein":
-        print("Möchten Sie von Fahrenheit nach Celsius konvertieren? (ja/nein)")
-        antwort2 = input().strip().lower()
-        if antwort2 == "ja":
-            print("Bitte geben Sie die Temperatur in Fahrenheit ein:")
+    print("Was möchten Sie konvertieren? (temperatur/gewicht)")
+    kategorie = input().strip().lower()
+    if kategorie == "temperatur":
+        print("Möchten Sie von Celsius nach Fahrenheit konvertieren? (ja/nein)")
+        antwort = input().strip().lower()
+        if antwort == "ja":
+            print("Bitte geben Sie die Temperatur in Celsius ein:")
             grad = float(input())
-            ergebnis = (grad - 32) / 1.8
-            print(f"{grad}°F sind {ergebnis}°C")
+            ergebnis = grad * 1.8 + 32
+            print(f"{grad}°C sind {ergebnis}°F")
+        elif antwort == "nein":
+            print("Möchten Sie von Fahrenheit nach Celsius konvertieren? (ja/nein)")
+            antwort2 = input().strip().lower()
+            if antwort2 == "ja":
+                print("Bitte geben Sie die Temperatur in Fahrenheit ein:")
+                grad = float(input())
+                ergebnis = (grad - 32) / 1.8
+                print(f"{grad}°F sind {ergebnis}°C")
+            else:
+                print("Keine Konvertierung ausgewählt.")
         else:
-            print("Keine Konvertierung ausgewählt.")
+            print("Ungültige Antwort.")
+    elif kategorie == "gewicht":
+        print("Möchten Sie von Gramm nach Unzen konvertieren? (ja/nein)")
+        antwort = input().strip().lower()
+        if antwort == "ja":
+            print("Bitte geben Sie das Gewicht in Gramm ein:")
+            gramm = float(input())
+            unzen = gramm * 0.03527396
+            print(f"{gramm} Gramm sind {unzen} Unzen")
+        elif antwort == "nein":
+            print("Möchten Sie von Unzen nach Gramm konvertieren? (ja/nein)")
+            antwort2 = input().strip().lower()
+            if antwort2 == "ja":
+                print("Bitte geben Sie das Gewicht in Unzen ein:")
+                unzen = float(input())
+                gramm = unzen / 0.03527396
+                print(f"{unzen} Unzen sind {gramm} Gramm")
+            else:
+                print("Keine Konvertierung ausgewählt.")
+        else:
+            print("Ungültige Antwort.")
     else:
-        print("Ungültige Antwort.")
-
+        print("Ungültige Kategorie ausgewählt.")
 else:
     print("Språk ikke gjenkjent / Language not recognized / Sprache nicht erkannt.")
+
